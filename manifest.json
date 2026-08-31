@@ -1,0 +1,77 @@
+{
+  "manifest_version": 3,
+  "name": "番茄 Mail 阅读工作区",
+  "version": "0.1.0",
+  "description": "将番茄小说阅读页映射为可逆的个人邮箱式阅读工作区。",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "src/background.js"
+  },
+  "commands": {
+    "toggle-skin": {
+      "suggested_key": {
+        "default": "Alt+Shift+M"
+      },
+      "description": "切换番茄 Mail 阅读皮肤"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://fanqienovel.com/reader/*"
+      ],
+      "css": [
+        "src/core/early-transition.css"
+      ],
+      "js": [
+        "src/core/early-transition.js"
+      ],
+      "run_at": "document_start"
+    },
+    {
+      "matches": [
+        "https://fanqienovel.com/reader/*"
+      ],
+      "css": [
+        "src/skins/outlook/styles.css"
+      ],
+      "js": [
+        "src/platform/browser.js",
+        "src/skins/outlook/outlook-favicon.js",
+        "src/core/tab-appearance.js",
+        "src/adapters/fanqie/selectors.js",
+        "src/adapters/fanqie/parser.js",
+        "src/adapters/fanqie/adapter.js",
+        "src/core/storage.js",
+        "src/core/catalog-page-parser.js",
+        "src/core/catalog-transfer.js",
+        "src/core/catalog-page-workflow.js",
+        "src/core/reader-transfer.js",
+        "src/core/catalog-session-client.js",
+        "src/core/performance-metrics.js",
+        "src/skins/outlook/fluent-icons.js",
+        "src/skins/outlook/tokens.js",
+        "src/skins/outlook/personas.js",
+        "src/skins/outlook/components.js",
+        "src/skins/outlook/index.js",
+        "src/core/native-catalog-sync.js",
+        "src/core/controller.js",
+        "src/content.js"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "https://fanqienovel.com/page/*"
+      ],
+      "js": [
+        "src/core/catalog-page-parser.js",
+        "src/core/catalog-transfer.js",
+        "src/page/catalog-collector.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

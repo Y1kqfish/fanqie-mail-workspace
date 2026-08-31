@@ -1,0 +1,421 @@
+.fqmail-shell {
+  position: fixed;
+  inset: 0;
+  z-index: 2147483000;
+  display: grid;
+  grid-template-columns: 49px 214px 354px minmax(0, 1fr) 305px;
+  grid-template-rows: 48px 77px minmax(0, 1fr);
+  color: #242424;
+  background: #f5f5f5;
+  font: 14px/1.4 "Segoe UI", "Microsoft YaHei UI", sans-serif;
+  overflow: hidden;
+}
+
+.fqmail-topbar {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  display: flex;
+  align-items: center;
+  height: 48px;
+  background: #0f6cbd;
+  color: #fff;
+}
+
+.fqmail-topbar-launcher,
+.fqmail-launcher {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  border: 0;
+  border-radius: 0;
+  color: #fff;
+}
+
+.fqmail-brand {
+  box-sizing: border-box;
+  flex: 0 0 216px;
+  width: 216px;
+  padding: 0 12px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 48px;
+}
+
+.fqmail-search-shell {
+  box-sizing: border-box;
+  display: flex;
+  flex: 0 0 350px;
+  align-items: center;
+  width: 350px;
+  height: 32px;
+  margin-top: 0;
+  padding: 0 10px;
+  border-radius: 2px;
+  background: #fff;
+  color: #616161;
+}
+
+.fqmail-search-box {
+  width: 100%;
+  height: 30px;
+  padding: 0 8px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: #242424;
+  font: inherit;
+}
+
+.fqmail-topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  margin-left: auto;
+  padding-right: 8px;
+}
+
+.fqmail-account-avatar {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  margin-left: 4px;
+  border-radius: 50%;
+  background: #fff;
+  color: #0f6cbd;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.fqmail-app-rail {
+  grid-column: 1;
+  grid-row: 2 / 4;
+  box-sizing: border-box;
+  width: 40px;
+  margin-left: 4px;
+  padding-top: 8px;
+  border-right: 1px solid #d1d1d1;
+  background: #fafafa;
+}
+
+.fqmail-rail-item {
+  width: 40px;
+  height: 40px;
+  margin-bottom: 4px;
+  border-left: 2px solid transparent;
+  border-radius: 0;
+}
+
+.fqmail-rail-item--selected {
+  border-left-color: #0f6cbd;
+  background: #ebf3fc;
+  color: #0f6cbd;
+}
+
+.fqmail-ribbon {
+  grid-column: 2 / -1;
+  grid-row: 2;
+  display: grid;
+  grid-template-rows: 37px 40px;
+  min-width: 0;
+  border-bottom: 1px solid #d1d1d1;
+  background: #fff;
+}
+
+.fqmail-ribbon-tabs {
+  display: flex;
+  align-items: stretch;
+  gap: 2px;
+  padding-left: 8px;
+}
+
+.fqmail-ribbon-tab {
+  box-sizing: border-box;
+  min-width: 56px;
+  padding: 0 16px;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  background: transparent;
+  color: #424242;
+  font: inherit;
+  font-weight: 600;
+}
+
+.fqmail-ribbon-tab--selected {
+  border-bottom-color: #0f6cbd;
+  color: #0f6cbd;
+}
+
+.fqmail-main-surface {
+  grid-template-rows: 77px minmax(0, 1fr);
+}
+
+.fqmail-command-bar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+  overflow-x: auto;
+  padding: 4px 8px;
+}
+
+.fqmail-icon-button,
+.fqmail-button {
+  box-sizing: border-box;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: 32px;
+  padding: 0 8px;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  background: transparent;
+  color: #242424;
+  font: inherit;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fqmail-icon-button:hover,
+.fqmail-icon-button:focus-visible,
+.fqmail-button:hover,
+.fqmail-button:focus-visible {
+  border-color: #c7c7c7;
+  background: #f5f5f5;
+  outline: none;
+}
+
+.fqmail-icon-button:active,
+.fqmail-button:active {
+  background: #e8e8e8;
+}
+
+.fqmail-icon-button:disabled,
+.fqmail-button:disabled {
+  color: #a19f9d;
+  cursor: not-allowed;
+}
+
+.fqmail-icon-button .fqmail-icon {
+  margin: 0;
+}
+
+.fqmail-button .fqmail-icon,
+.fqmail-command-label + .fqmail-icon {
+  margin-right: 6px;
+}
+
+.fqmail-icon-only {
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  overflow: hidden;
+}
+
+.fqmail-icon-only .fqmail-icon {
+  margin: 0;
+  margin-right: 0;
+}
+
+.fqmail-icon-only .fqmail-button-label,
+.fqmail-icon-only .fqmail-command-label,
+.fqmail-icon-only .fqmail-folder-label,
+.fqmail-icon-only .fqmail-menu-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.fqmail-icon-only .fqmail-command-label {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.fqmail-catalog-sync-slot { flex: 0 0 104px; width: 104px; height: 40px; pointer-events: auto; }
+.fqmail-native-catalog-sync-prompt {
+  position: fixed; top: 140px; right: 24px; z-index: 2147483647;
+  display: flex; align-items: center; gap: 10px; max-width: min(520px, calc(100vw - 48px));
+  padding: 10px 12px; border: 1px solid #c8c8c8; border-radius: 4px;
+  background: #fff; color: #242424; box-shadow: 0 8px 24px rgb(0 0 0 / 18%);
+  font: 14px/20px "Segoe UI", "Microsoft YaHei UI", sans-serif;
+}
+.fqmail-native-catalog-sync-message { flex: 1 1 auto; min-width: 0; }
+.fqmail-native-catalog-sync-prompt .fqmail-icon-button { flex: 0 0 auto; }
+.fqmail-native-catalog-sync-prompt .fqmail-native-catalog-sync-fallback[hidden] { display: none; }
+
+.fqmail-rail-item.fqmail-icon-only {
+  width: 40px;
+  height: 40px;
+}
+
+.fqmail-command-label {
+  margin-left: 6px;
+  white-space: nowrap;
+}
+
+.fqmail-split-command {
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: stretch;
+}
+
+.fqmail-split-command .fqmail-command-main {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.fqmail-split-command .fqmail-command-dropdown {
+  width: 22px;
+  min-width: 22px;
+  padding: 0;
+  border-left-color: #d1d1d1;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.fqmail-status {
+  flex: 0 1 auto;
+  min-width: 120px;
+  margin-left: auto;
+  padding: 4px 8px;
+  color: #616161;
+  font-size: 12px;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.fqmail-status[data-fqmail-state="error"] { color: #a4262c; }
+.fqmail-status[data-fqmail-state="success"] { color: #107c10; }
+.fqmail-status[data-fqmail-state="loading"] { color: #0f6cbd; }
+
+.fqmail-content-grid {
+  grid-column: 2 / -1;
+  grid-row: 3;
+  display: grid;
+  padding-left: 1px;
+  grid-template-columns: 212px 351px 4px minmax(0, 1fr) 305px;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.fqmail-folder-pane {
+  grid-column: 1;
+  box-sizing: border-box;
+  width: 214px;
+  min-width: 0;
+  min-height: 0;
+  padding: 14px 8px 12px;
+  border-right: 1px solid #d1d1d1;
+  background: #fafafa;
+  overflow-y: auto;
+}
+
+.fqmail-folder-tree { width: 188px; margin: 0 auto; }
+.fqmail-folder-group { margin-bottom: 16px; }
+.fqmail-folder-row { justify-content: flex-start; width: 100%; margin: 1px 0; text-align: left; }
+.fqmail-folder-row .fqmail-icon { margin-right: 8px; }
+.fqmail-folder-row[aria-current="page"] { background: #ebf3fc; color: #0f6cbd; font-weight: 600; }
+
+.fqmail-message-list-pane {
+  grid-column: 2;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+  margin-top: 8px;
+  overflow: hidden;
+  border: 1px solid #e1e1e1;
+  border-radius: 4px 4px 0 0;
+  background: #fff;
+  box-shadow: rgba(0, 0, 0, .133) 0 1.6px 3.6px, rgba(0, 0, 0, .11) 0 .3px .9px;
+}
+
+.fqmail-message-list-header { display: flex; flex-direction: row; align-items: center; min-height: 48px; padding: 0 8px 0 12px; border-bottom: 1px solid #e1e1e1; background: #fff; white-space: nowrap; }
+.fqmail-list-tabs { display: flex; flex: 0 0 auto; flex-direction: row; align-self: stretch; margin-left: 0; white-space: nowrap; }
+.fqmail-list-tab { flex: 0 0 auto; padding: 0 10px; border: 0; border-bottom: 2px solid transparent; background: transparent; color: #616161; font: inherit; white-space: nowrap; }
+.fqmail-list-tab--selected { border-bottom-color: #0f6cbd; color: #0f6cbd; font-weight: 600; }
+.fqmail-message-list-actions { display: flex; flex: 0 0 auto; gap: 2px; margin-left: auto; }
+.fqmail-list-nav-button { min-height: 30px; padding: 0 6px; font-size: 12px; }
+.fqmail-message-list { min-height: 0; overflow-y: auto; overscroll-behavior: contain; }
+.fqmail-message-row { display: grid; grid-template-columns: 20px 32px minmax(0, 1fr) auto; gap: 8px; align-items: center; box-sizing: border-box; width: 100%; min-height: 76px; padding: 12px 14px; border: 0; border-bottom: 1px solid #eee; background: #fff; color: #242424; cursor: pointer; text-align: left; }
+.fqmail-message-row:hover { background: #f5f5f5; }
+.fqmail-message-row--selected { border-left: 3px solid #0f6cbd; background: #ebf3fc; }
+.fqmail-message-checkbox { margin: 0; }
+.fqmail-message-avatar,
+.fqmail-reader-avatar { display: grid; place-items: center; width: 32px; height: 32px; border-radius: 50%; background: #0f6cbd; color: #fff; font-size: 12px; font-weight: 600; }
+.fqmail-message-content { min-width: 0; }
+.fqmail-message-sender, .fqmail-message-subject, .fqmail-message-preview { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.fqmail-message-sender { color: #616161; font-size: 12px; }
+.fqmail-message-subject { margin: 3px 0; font-weight: 600; }
+.fqmail-message-preview, .fqmail-message-time { color: #616161; font-size: 12px; }
+
+.fqmail-reader-region { grid-column: 4; min-width: 0; min-height: 0; padding: 8px 16px 0; overflow: hidden; background: #f5f5f5; }
+.fqmail-reader-subject { margin: 0 0 8px; color: #242424; font-size: 22px; font-weight: 600; line-height: 32px; }
+.fqmail-message-card { display: flex; flex-direction: column; min-width: 0; min-height: 0; height: calc(100% - 40px); border: 1px solid #e1e1e1; border-radius: 2px; background: #fff; box-shadow: 0 1px 2px rgba(0, 0, 0, .08); }
+.fqmail-reader-meta { flex: 0 0 auto; border-bottom: 1px solid #e1e1e1; }
+.fqmail-reader-sender-row { display: flex; align-items: center; gap: 10px; min-height: 54px; padding: 8px 16px; }
+.fqmail-reader-sender { color: #424242; font-weight: 600; }
+.fqmail-reader-actions { display: flex; gap: 2px; align-items: center; min-height: 40px; padding: 0 12px; }
+.fqmail-reader-pane { flex: 1 1 auto; min-width: 0; min-height: 0; overflow: auto; padding: 8px 16px 24px; background: #fff; }
+.fqmail-shell .fqmail-reader-pane > .muye-reader-box { background-color: #fff !important; }
+
+.fqmail-ad-rail, .fqmail-utility-rail { grid-column: 5; box-sizing: border-box; width: 305px; min-width: 0; min-height: 0; padding: 24px 20px; border-left: 1px solid #d1d1d1; background: #f5f5f5; overflow: hidden; }
+.fqmail-ad-rail .fqmail-icon-button { margin-bottom: 18px; }
+.fqmail-ad-title { font-size: 18px; font-weight: 600; }
+.fqmail-ad-body { margin-top: 8px; color: #616161; font-size: 12px; }
+.fqmail-ad-badge { display: inline-block; margin-top: 18px; padding: 2px 6px; border: 1px solid #d1d1d1; border-radius: 2px; color: #616161; font-size: 11px; }
+
+.fqmail-more-menu { position: fixed; right: 16px; top: 117px; z-index: 2147483004; min-width: 180px; padding: 4px; border: 1px solid #d1d1d1; border-radius: 2px; background: #fff; box-shadow: 0 4px 12px rgba(0, 0, 0, .18); }
+.fqmail-menu-item { justify-content: flex-start; width: 100%; }
+.fqmail-menu-item .fqmail-icon { margin-right: 8px; }
+.fqmail-notice { position: fixed; right: 16px; bottom: 16px; z-index: 2147483005; max-width: 320px; padding: 10px 14px; border-radius: 2px; background: #242424; color: #fff; pointer-events: none; }
+
+@media (max-width: 1919px) {
+  .fqmail-shell { grid-template-columns: 49px 214px 354px minmax(0, 1fr) 48px; }
+  .fqmail-content-grid { grid-template-columns: 212px 351px 4px minmax(0, 1fr) 48px; }
+  .fqmail-ad-rail, .fqmail-utility-rail { width: 48px; padding: 12px 4px; }
+  .fqmail-ad-rail > :not(.fqmail-icon-button), .fqmail-utility-rail > :not(.fqmail-icon-button) { display: none; }
+}
+
+@media (max-width: 1279px) {
+  .fqmail-shell { grid-template-columns: 49px 160px 300px minmax(0, 1fr); }
+  .fqmail-content-grid { grid-template-columns: 160px 300px minmax(0, 1fr); }
+  .fqmail-folder-pane { width: 160px; }
+  .fqmail-message-list-pane { grid-column: 2; }
+  .fqmail-reader-region { grid-column: 3; }
+  .fqmail-ad-rail, .fqmail-utility-rail { display: none; }
+  .fqmail-folder-tree { width: 144px; }
+}
+
+@media (max-width: 959px) {
+  .fqmail-app-rail, .fqmail-folder-pane { display: none; }
+  .fqmail-shell { grid-template-columns: 300px minmax(0, 1fr); }
+  .fqmail-ribbon, .fqmail-content-grid { grid-column: 1 / -1; }
+  .fqmail-content-grid { grid-template-columns: 300px minmax(0, 1fr); padding-left: 0; }
+  .fqmail-message-list-pane { grid-column: 1; }
+  .fqmail-reader-region { grid-column: 2; }
+}
+
+@media (max-width: 719px) {
+  .fqmail-search-shell { display: none; }
+  .fqmail-content-grid { grid-template-columns: 1fr; grid-template-rows: auto minmax(180px, 34vh) minmax(50vh, 1fr); overflow-y: auto; }
+  .fqmail-message-list-pane { grid-column: 1; grid-row: 1; margin-top: 0; min-height: 180px; }
+  .fqmail-reader-region { grid-column: 1; grid-row: 2; min-height: 50vh; }
+}
